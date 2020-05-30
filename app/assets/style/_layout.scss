@@ -1,0 +1,348 @@
+// 導覽列開始
+.header{
+    position: relative;
+    
+    padding: 30px 88px; //天地留白
+    background: $primary;
+    @include ipad(){
+        padding: 30px 36px;
+    }
+    @include iphone(){
+        padding: 10px 0px;
+        justify-content: center;
+        width: 100%;
+        position: fixed;
+        top:0px;
+        z-index: 1000; //使導覽列在最前面
+        
+    }
+   
+    
+    h1 {
+        a{
+        background-image: url('../img/logo-new_工作區域 1.png');
+        display: block;
+        width: 80px;
+        height: 49px;
+        text-decoration: none;
+        text-indent: 101%;
+        overflow: hidden;
+        white-space: nowrap;
+        @include iphone(){
+            background-image: url('../img/logo-head-iphone.png');
+            width: 48px;
+            height: 30px;
+        }
+        }
+        
+    }
+    .hamburger{  //漢堡選單
+        @include iphone(){
+            position: absolute; 
+            top:19px;
+            left: 6%; //★ 用%數，不易跑版
+            width: 35px;
+            height: 35px;
+            .line{
+                width: 20px;
+                height: 2px;
+                background:$white;
+                margin-bottom: 3px;
+                transition: transform .5s; //在未被點時下動畫速度
+                
+                
+            }
+            
+            &.active{ //點擊後漢堡變打叉
+                .line{
+                    position: absolute;
+                    top:5px;
+                }
+                .line:nth-child(1){
+                    transform: rotate(45deg);
+                }
+                .line:nth-child(2){
+                    display: none;
+                }
+                .line:nth-child(3){
+                    transform: rotate(-45deg);
+                }
+                
+            }
+        }
+    }
+    .open{   //點擊漢堡選單，出現左側選單
+        @include iphone(){
+            left: 0;
+        }
+    }
+    ul{ //下拉式選單
+        @include iphone(){
+           flex-wrap: wrap;
+           flex-direction: column;
+           position: absolute;
+           background-color: $primary;
+           top:50px;
+           left: -100%; //跑到外面去
+           width: 100%; //滿版
+           z-index: 2;
+           transition: all .5s;
+        }
+        font-size: $font-20;
+        li{
+            text-align: center;
+            margin-left: 64px;
+            @include iphone(){
+                margin-left: 0px;
+                border-bottom: 1px solid $white;
+                padding: 16px 0px;
+                &:hover{
+                    background: $second;
+                }
+            }
+        }
+        li:nth-child(1){
+            @include iphone(){
+                border-top: 1px solid $white;
+            }
+        }
+        a{
+            display: block;
+            color: $white;
+            text-decoration: none;
+            position: relative;
+            padding: 5px 0px;
+            width: 100%;
+            text-align: center;
+            &:hover{
+                @include iphone(){
+                    
+                    width: 100%;
+                    height: 100px;
+                }
+            }
+        }
+        a::after{
+            content: '';
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: $white;
+            transform: scale3d(0,1,1); //translate3d(x,y,z)
+            transition: transform .3s ;
+            position: absolute;
+            bottom: -0.25rem;
+            left: 0rem;
+        }
+        a:hover::after{
+            transform: scale3d(1, 3, 3);
+        }
+        
+    }
+}
+// 導覽列結束
+
+// 表尾開始
+
+.footer{
+    background: $primary;
+    @include ipad(){
+        padding-bottom: 40px;
+    }
+    @include iphone(){
+        padding-bottom: 20px;
+    }
+    
+    .container{
+        padding-right: 25px; //外容器，pc時這裡內縮
+        padding-left: 25px;
+        @include ipad(){
+            padding-right: 0px;
+            padding-left: 0px;
+        }
+        @include iphone(){
+            padding-right: 12px;
+            padding-left: 12px;
+        }
+    }
+    .footer-title{
+        @include iphone(){
+            margin-bottom: 48px; //與footer-copy的底間距
+        }
+    }
+}
+    // 聯絡資訊開始
+.info{
+        @include ipad(){
+            padding-top: 40px;  //天留白
+        }
+        @include iphone(){
+            padding-top: 24px;
+        }
+        a {
+            text-decoration: none;
+            color: $white;
+        }
+        .phone,.tel{
+            font-size: $font-36;
+            @include ipad(){
+                font-size: $font-20;
+            }
+            @include iphone(){
+                font-size: $font-16;
+                margin-bottom: 8px;
+            }
+        }
+       .phone::before{
+           content: url('../img/ic_phone_48px.svg');
+           position: relative;
+           top:5px;
+           left:0px;
+           margin-right: 23px;
+           @include ipad(){
+               content: url('../img/ic_phone_48px-24.svg');
+               margin-right: 12px;
+           }
+           @include iphone(){
+               content: url('../img/ic_phone.svg');
+               top:0;
+           }
+
+       } 
+       .tel::before{
+            content: url('../img/ic_mail_outline_24px.svg');
+            position: relative;
+            top:13px;
+            left:0px;
+            margin-right: 12px;  
+            @include ipad(){
+                content: url('../img/ic_mail_outline_24-24px.svg');
+                margin-right: 8px;
+            }
+            @include iphone(){
+                content: url('../img/ic_mail_iphone.svg');
+                top:5px;
+            }
+       }
+       .footer-nav{
+           @include iphone(){
+               display: none;
+           }
+           li:nth-child(5){
+               @include ipad(){
+                margin-right: 0;
+               }
+           }
+       }
+    }
+    .social{
+        @include ipad(){   //天留白
+            padding-top: 40px;
+        }
+        @include iphone(){
+            padding-top: 24px;
+        }
+    }
+    .social-ul{
+        li{
+            @include ipad(){
+                margin-left: 24px;
+            }
+        }
+        li:nth-child(1){
+            @include ipad(){
+                margin-right: 0;
+            }
+        }
+        li:nth-child(1){
+            margin-left: 0;
+        }
+        img{
+            @include ipad(){
+                width: 24px;
+                height: 24px;
+            }
+        }
+    }
+
+    // 聯絡資訊結束
+
+    // copyright開始
+.footer-copy::before{ //線段
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: $white;
+    position: absolute;
+    top:-24px;
+    left: 0px;
+    @include iphone(){
+        top:-15px;
+    }
+}
+.footer-copy{
+        position: relative;
+        color: $white;
+        @include iphone(){
+            display: block;
+        }
+    .logo{
+        @include iphone(){
+            display: block;
+        }
+    }
+    ul{  //隱私權
+        @include iphone(){
+            display: block;
+        }
+    }
+    h4 a{ //logo
+        background-image: url('../img/logo-new_工作區域 1.png');
+        display: block;
+        width: 80px;
+        height: 49px;
+        text-decoration: none;
+        text-indent: 101%;
+        overflow: hidden;
+        white-space: nowrap;
+        margin-right: 38px;
+        @include ipad(){
+            display: none;
+        }
+        @include iphone(){
+            background: url('../img/logo-iphone.png');
+            width: 46px;
+            height: 28px;
+            display: block;
+            position: absolute;
+            right: 0px;
+            bottom: 0px;
+            margin-right: 0px;
+        }
+    }
+    p{
+        @include iphone(){
+            @include iphone(){
+                font-size: $font-14;
+            }
+            margin-bottom: 8px;
+        }
+    }
+    li a{
+        margin-left: 62px;
+        font-size: $font-14;
+        text-decoration: none;
+        color: $white; 
+        @include ipad(){
+            margin-left: 24px;
+        }
+        @include iphone(){
+            margin-left: 0;
+            margin-bottom: 8px;
+        }
+    }
+    
+}
+    // copyright結束
+// 表尾結束

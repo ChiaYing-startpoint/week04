@@ -1,0 +1,215 @@
+// 色彩
+$primary:#AA0601; 
+$second:#650300; //★顏色不要用色彩名命名
+$white:#FFFFFF;
+$black:#000000;
+$glay:#707070;
+$glaylight:#DEE2E6;
+$bgColor:rgba(170, 6, 1, 0.05);
+$select:#495057;
+$DCDCDC:#DCDCDC;
+$box-gray:#5F3E2D;
+$box-brown:#B75929;
+$pagination:#555555;
+$F2F2F2:#F2F2F2;
+$timecolor:#6C6C6C;
+$article:#0A0A0A;
+$border:#00000020;
+
+
+
+// 字級
+$font-14:14px;
+$font-16:16px;
+$font-20:20px;
+$font-24:24px;
+$font-28:28px;
+$font-32:32px;
+$font-36:36px;
+$font-40:40px;
+$font-42:42px;
+$font-48:48px;
+$font-64:64px;
+$font-72:72px;
+
+//字型
+$font-family: 'Roboto', sans-serif;
+
+//字重
+$font-weight-regular:400;
+$font-weight-medium:500;
+$font-weight-bold:700;
+$font-weight-black:900;
+
+// flex
+.d-flex{
+    display: flex;
+}
+.flex-direction-row-reverse{
+    flex-direction: row-reverse;
+}
+.flex-direction-column{
+    flex-direction: column;
+}
+.justify-content-flex-start{
+    justify-content: flex-start;
+}
+.justify-content-flex-end{
+    justify-content: flex-end;
+}
+.justify-content-center{
+    justify-content: center;
+}
+.justify-content-between{
+    justify-content: space-between;
+}
+      //  align-item
+.align-items-center{
+    align-items: center;
+}
+.align-items-end{
+    align-items: flex-end;
+}
+.align-items-baseline{
+    align-items: baseline;
+}
+// 共用間距
+.mt-4{
+    margin-top: 4px;
+}
+.mt-12{
+    margin-top: 12px;
+}
+.mt-16{
+    margin-top: 16px;
+}
+.mt-20{
+    margin-top: 20px;
+}
+.mt-32{
+    margin-top: 32px;
+}
+.mb-4{
+    margin-bottom: 4px;
+}
+.mb-8{
+    margin-bottom: 8px;
+}
+.mb-16{
+    margin-bottom: 16px;
+}
+.mb-20{
+    margin-bottom: 20px;
+}
+.mb-24{
+    margin-bottom: 24px;
+}
+.mb-32{
+    margin-bottom: 32px;
+}
+.mb-40{
+    margin-bottom: 40px;
+}
+.mb-42{
+    margin-bottom: 42px;
+}
+.mb-48{
+    margin-bottom: 48px;
+}
+.mb-52{
+    margin-bottom: 52px;
+}
+.mb-60{
+    margin-bottom: 60px;
+}
+
+.ml-24{
+    margin-left: 24px;
+}
+.ml-32{
+    margin-left: 32px;
+}
+.mr-8{
+    margin-right: 8px;
+}
+.mr-16{
+    margin-right: 16px;
+}
+
+.mr-24{
+    margin-right: 24px;
+}
+.mr-30{
+    margin-right: 30px;
+}
+.mr-48{
+    margin-right: 48px;
+}
+
+.pt-16{
+    padding-top: 16px;
+}
+.pt-36{
+    padding-top: 36px;
+}
+.pt-48{
+    padding-top: 48px;
+}
+.pt-64{
+    padding-top: 64px;
+}
+.pt-88{
+    padding-top: 88px;
+}
+.pb-156{
+    padding-bottom: 156px;
+}
+.pb-154{
+    padding-bottom: 154px;
+}
+
+.pb-28{
+    padding-bottom: 28px;
+}
+.pb-80{
+    padding-bottom: 80px;
+}
+.pb-92{
+    padding-bottom: 92px;
+}
+
+
+//滿高
+.h-100{
+    height: 100%;
+}
+
+
+//@mixin 樣式
+@mixin h3 {
+    text-align: center;
+    font-size: $font-48;
+    margin-bottom: 60px;
+    font-weight: bolder;
+}
+@mixin flex-li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+@mixin a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+// 容器
+.container{
+    max-width: 1224px;
+    margin: 0 auto;
+    padding-right: 12px;
+    padding-left:12px;
+   
+   
+}

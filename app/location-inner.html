@@ -1,0 +1,61 @@
+---
+title: location-2
+layout: ./app/layout.ejs
+engine: ejs
+current: index
+---
+<!-- banner開始 -->
+<header class="location-banner ">
+    <div class="container h-100">
+        <div class="location-title d-flex h-100   ">
+            <h2 class="mb-8">門市據點</h2>
+            <img class="mb-16" src="./assets/img/banner-location.svg" alt="banner-location">
+        </div>
+
+    </div>
+</header>
+<!-- banner結束 -->
+<!-- 門市據點開始 -->
+<main class="location-content location-content-inner">
+    <div class="container">
+        <!-- 選擇開始 -->
+        <div class="location-input  mb-32">
+            <label for="location">選擇地區</label>
+            <select name="" id="location">
+                <option value="">台北中山旗艦店</option>
+                <option value="">台中中山旗艦店</option>
+                <option value="">台南中山旗艦店</option>
+            </select>
+        </div>
+        <!-- 選擇結束 -->
+        <!-- 卡片開始 -->
+        <ul class="location-card location-card-inner d-flex justify-content-between ">
+            
+            <li class="card-item">
+                <img src="assets/img/lo-photo.png" alt="lo-photo">
+                <div class="card-box">
+                    <div class="location-text mt-16 mb-16">
+                        <p class="mb-32">台北中山旗艦店</p>
+                        <ul>
+                            <li class="mb-8">電話：(02)000-1234</li>
+                            <li class="mb-8">營業時間：10:00-21:00</li>
+                            <li>地址：台北市中山區南京東路25巷2-1號</li>
+                        </ul>
+                    </div>
+                    <a href="">詳細資訊</a>
+                </div>
+                
+            </li>
+            <li class="location-map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.1557219335277!2d119.5620219756701!3d23.562850068546993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346c5a8cf9f03f55%3A0x98a80479b7564fb9!2z6aas5YWs5riv!5e0!3m2!1szh-TW!2stw!4v1590529877314!5m2!1szh-TW!2stw"
+                    width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+                    tabindex="0"></iframe>
+            </li>
+            
+            
+        </ul>
+        <!-- 卡片結束 -->
+    </div>
+</main>
+<!-- 門市據點結束 -->

@@ -1,0 +1,303 @@
+
+// location.html開始
+// banner開始
+.location-banner{
+    background: url('../img/72.png');
+    height: 304px;
+    background-position:  center;
+    background-size: cover ;
+    @include ipad(){
+        background: url('../img/72-pad.png');
+        height: 304px;
+        background-position: center;
+        background-size: cover ;
+    }
+     @include iphone(){
+        background: url('../img/72-phone.png') no-repeat;
+        height: 180px;
+        background-position: center ;
+        background-size: cover ;
+    }
+    .location-title{
+        align-items: flex-end;
+    }
+    h2{
+        font-size: $font-64;
+        margin-right: 10px;
+        @include ipad(){
+            font-size: $font-48;
+            margin-bottom: 5px;
+            margin-right: 16px;
+        }
+        @include iphone(){
+            font-size: $font-28;
+            margin-bottom: 4px;
+            margin-right: 8px;
+        }
+    }
+    img{
+        @include ipad(){
+            width: 48px;
+            height: 48px;
+            margin-bottom: 9px;
+        }
+         @include iphone(){
+             width: 24px;
+            height: 24px;
+            margin-bottom: 8px;
+        }
+    }
+}
+// banner結束
+
+// 門市據點開始
+.location-content{
+    padding-top: 16px;  //天地留白
+    padding-bottom: 154px;
+    @include ipad(){
+            padding-bottom: 104px;
+        }
+    @include iphone(){
+        padding-bottom: 56px;
+    }
+}
+    // 選擇開始
+    .location-input{
+        @include ipad(){
+            margin-bottom: 24px;
+        }
+        select{
+            width: 266px;
+            height: 45px;
+            padding: 10px 0px 10px 19px;
+            font-size: 18px;
+            color: $select;
+            margin-left: 22px;
+            @include ipad(){
+                width: 38.4%;
+                font-size: $font-16;
+            }
+             @include iphone(){
+                width: 88%;
+                font-size: $font-16;
+                margin-left: 16px;
+            }
+             @include iphone414(){
+                width: 77.7%;
+                font-size: $font-16;
+            }
+            @include iphone375(){
+                width: 75.3%;
+                font-size: $font-16;
+            }
+            @include iphone320(){
+                width: 71.1%;
+                font-size: $font-16;
+            }
+        }
+        label{
+            font-size: $font-24;
+            vertical-align: middle;
+            @include ipad(){
+                font-size: $font-16;
+            }
+        }
+    }
+    // 選擇結束
+
+    // 卡片開始
+    .location-card >li{ //第一層li
+        margin-bottom: 28px;
+        border: solid 1px $border;
+         @include ipad(){
+                margin-bottom: 24px;
+            }
+            @include iphone(){
+                margin-bottom: 20px;
+            }
+    }
+    .location-card{
+        flex-wrap: wrap;
+        justify-content: space-between;
+        li{
+            width: 32.5%;   //決定rwd位置
+            @include ipad(){
+                width: 48.3333%;
+            }
+             @include iphone(){
+                width: 100%;
+            }
+        }
+        li:nth-child(10),li:nth-child(11),li:nth-child(12){
+            margin-bottom: 0px;
+        }
+        .location-text{
+             @include ipad(){
+                   margin-top: 8px; 
+                }
+            p{
+                font-size: $font-24;
+                font-weight:$font-weight-bold;
+                margin-left: 24px;
+                @include ipad(){
+                   font-size: $font-16; 
+                   margin-bottom: 24px;
+                   margin-left: 16px;
+                }
+            }
+            li{  //第二層li
+                width: 100%; //滿寬
+                font-size: $font-20;
+                position: relative;
+                padding-left: 70px;
+                padding-right: 20px;
+                @include ipad(){
+                   font-size: $font-14;
+                   padding-left: 50px;
+                }
+            }
+            li:nth-child(1)::before{
+                content: url('../img/lo-phone.svg');
+                position: absolute;
+                top:2px;
+                left:36px;
+                @include ipad(){
+                    content: url('../img/location-ipad-phone.svg');
+                    position: absolute;
+                    top:2px;
+                   left: 16px;
+                }
+            }
+            li:nth-child(2)::before{
+                content: url('../img/lo-time.svg');
+                position: absolute;
+                top:2px;
+                left:37px;
+                @include ipad(){
+                    content: url('../img/location-ipad-time.svg');
+                    position: absolute;
+                    top:2px;
+                    left: 19px; 
+                }
+            }
+            li:nth-child(3)::before{
+                content: url('../img/lo-map.svg');
+                position: absolute;
+                top:2px;
+                left:40px;
+                @include ipad(){
+                    content: url('../img/location-ipad-map.svg');
+                    position: absolute;
+                    top:2px;
+                    left: 21px;   
+                }
+            }
+        }
+        a{
+            display: block;
+            width: 100%;
+            background: $black;
+            padding: 20px 0px;
+            text-align: center;
+            text-decoration: none;
+            color: $white;
+            font-size: $font-20;
+            transition: all .45s;
+            @include ipad(){
+                font-size: $font-14;
+                padding: 16px 0px;
+            }
+        }
+        a:hover{
+            opacity: 0.7;
+        }
+        ul{
+            position: relative;
+        }
+        ul::before{
+            content: '';
+            display: inline-block;
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            background:$border;
+            top:-16px;
+        }
+    }
+    // 卡片結束
+// 門市據點結束
+// location.html結束
+
+//location-inner.html開始
+.location-content-inner{ //天地留白
+    padding-bottom: 156px;
+    @include ipad(){
+        padding-bottom: 104px;
+    }
+    @include iphone(){
+        padding-bottom: 56px;
+    }
+    .location-card-inner{
+        height: 100%;
+        @include ipad(){
+            flex-direction: column;
+        }        
+    >li{
+        margin-bottom: 0;
+    }
+    .card-item {
+        width: 32.5%;
+        @include ipad(){
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            border: none;
+            margin-bottom: 32px;
+        }
+        @include iphone(){
+            flex-direction:column ;
+            margin-bottom: 20px;
+        }
+        img{
+            @include ipad(){
+                width: 48.5%;
+            }
+            @include iphone(){
+               width: 100%; 
+            }
+        }
+        .card-box{
+             @include ipad(){
+                width: 48.5%;
+                margin:9px 0px;
+                border: 1px solid $border;
+                a{
+                    display: none;
+                }
+            }
+            @include iphone(){
+                width: 100%;
+            }
+        }
+    }
+    .location-map{
+        width: 66.3%;
+         @include ipad(){
+            width: 100%;
+        }
+    }
+    }
+    iframe{
+        width: 100%;
+        height: 100%;
+        @include ipad(){
+            height: 465px;
+            display:block; //去掉圖片下空間
+        }
+        @include iphone(){
+            height: 227px;
+        }
+    }
+}
+
+//location-inner.html結束

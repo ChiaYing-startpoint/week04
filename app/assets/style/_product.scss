@@ -1,0 +1,353 @@
+
+.product{  //地留白
+    padding-bottom: 156px;
+    @include ipad(){
+           padding-bottom: 104px;  
+        }
+    @include iphone(){
+           padding-bottom: 56px;
+        }  
+}
+.product-subnav{
+     @include iphone(){
+           margin-top: 50px; //讓選單看見，不被擋住，header要下top:0置頂
+        }
+    a{
+         font-family: $font-family;
+        font-size: $font-42;
+        text-decoration: none;
+        color: $black;
+        height: 100%; //滿高才能置中
+        font-weight: $font-weight-medium;
+        padding: 24px 0px ;
+        @include ipad(){
+            font-size: $font-28;
+            padding: 16px 0px ;
+        }
+        @include iphone(){
+           font-size: $font-14;
+           padding: 8px 0px ;
+        }
+        @include iphone320(){   //320時文字跑版
+           font-size: 12px;
+           padding: 8px 0px ;
+        }
+    }
+    li{
+        width: 33.33333%;
+        border-left: 1px solid $DCDCDC;
+        position: relative;
+    }
+    li:nth-child(3){
+        border-right:1px solid $DCDCDC ;
+    }
+    li::before{
+        content: '';
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 16px;
+        background: $primary;
+        bottom: 0px;
+        display: none;
+    }
+    .subnav-item:hover::before,
+    .subnav-item.active::before{  //點擊後出現紅色底線
+        display: block; 
+    }
+    svg{
+        
+        @include ipad(){
+           width: 32px;
+        }
+        @include iphone(){
+           width: 15px;
+        }
+    }
+    .aa{
+        @include ipad(){
+           width: 23px;
+        }
+        @include iphone(){
+           width: 11px;
+           margin-right: 6px;
+        }
+        @include iphone320(){
+           width: 11px;
+           margin-right: 2px;
+        }
+    }
+}
+
+//banner開始
+.product-banner{
+   .product-banner1{
+       background: url('../img/product-banner-1.png');
+       width: 948px;
+       height: 309px;
+       background-size: cover;
+       background-position: center;
+       @include ipad(){ //★換圖片時，不必用設計稿的384px，才會滿版
+        background: url('../img/product-padph1.png');
+        width: 948px;
+        height: 309px;
+        background-size: cover;
+        background-position: center;
+       }
+       @include iphone414(){ 
+        background: url('../img/product-iphone1.png');
+        width: 375px;
+        height: 144px;
+        background-size: cover;
+        background-position: center;
+       }
+   }
+   .product-banner2{
+       background: url('../img/product-banner-2.png');
+       width: 948px;
+       height: 309px;
+       background-size: cover;
+       background-position: center;
+       @include ipad(){
+        background: url('../img/product-padph2.png');
+        width: 948px;
+        height: 309px;
+        background-size: cover;
+        background-position: center;
+       }
+       @include iphone414(){ 
+        background: url('../img/product-iphone2.png'); //用兩倍大小的圖片改高度就可以接近設計稿
+        width: 375px;
+        height: 144px;
+        background-size: cover;
+        background-position: center;
+       }
+   }
+   .product-banner3{  //product-innerSun的banner圖片
+       background: url('../img/product-inner-banner1.png');
+       width: 948px;
+       height: 309px;
+       background-size: cover;
+       background-position: center;
+       @include ipad(){
+        background: url('../img/product-inner-ipad3.png');
+        width: 948px;
+        height: 309px;
+        background-size: cover;
+        background-position: center;
+       }
+       @include iphone414(){ 
+        background: url('../img/product-iphone3.png');
+        width: 375px;
+        height: 144px;
+        background-size: cover;
+        background-position: center;
+       }
+   }
+   .product-banner4{
+       background: url('../img/product-inner-banner2.png');
+       width: 948px;
+       height: 309px;
+       background-size: cover;
+       background-position: center;
+       @include ipad(){
+        background: url('../img/product-inner-ipad4.png');
+        width: 948px;
+        height: 309px;
+        background-size: cover;
+        background-position: center;
+       }
+       @include iphone414(){ 
+        background: url('../img/product-iphone4.png');
+        width: 375px;
+        height: 144px;
+        background-size: cover;
+        background-position: center;
+       }
+   }
+
+}
+//banner結束
+
+//鏡框卡片開始
+.product-card{
+    padding-top: 88px; //與banner的間距
+    text-align: center;
+    @include ipad(){
+        padding-top: 40px;
+    }
+    @include iphone(){
+        padding-top: 24px;
+    }
+    h2{
+         font-family: $font-family;
+         font-weight: $font-weight-medium;
+        font-size:$font-42 ;
+        @include ipad(){
+            font-size:$font-32 ;
+        }
+        @include iphone(){
+            font-size:$font-20 ;
+        }
+    }
+    h3{
+        font-size: $font-32;
+        @include ipad(){
+            font-size:$font-24 ;
+            margin-bottom: 32px;
+        }
+        @include iphone(){
+            font-size:$font-16;
+            margin-bottom: 20px;
+        }
+    }
+    ul{
+        flex-wrap: wrap;
+    }
+    li{   //rwd位置
+        width: 23%;
+        margin-bottom: 104px;
+        margin-right: 1%;
+        margin-left: 1%;
+        @include ipad(){
+            width: 48%;
+            margin-right: 0%;
+            margin-left: 0%;
+            margin-bottom: 72px;
+        }
+        @include iphone(){
+            width: 100%;
+            margin-bottom: 32px;
+            img{
+                width: 100%; //圖片滿版
+            }
+        }
+    }
+    li:nth-child(9),li:nth-child(10),li:nth-child(11),li:nth-child(12){
+        margin-bottom: 88px;
+        @include iphone(){
+            
+            margin-bottom: 32px;
+        }
+    }
+    li:nth-child(11),li:nth-child(12){
+        @include ipad(){
+            margin-bottom: 63px;
+            @include iphone(){
+            margin-bottom: 32px;
+        }
+        }
+    }
+    li:nth-child(12){
+        @include iphone(){
+            margin-bottom: 40px;
+        }
+    }
+    a{
+        text-decoration: none;
+        font-family: $font-family;
+        font-size: $font-24;
+        color:$black;
+        font-weight: $font-weight-regular;
+         @include iphone(){
+           font-size: $font-16; 
+        }
+    }
+    .text-red{
+        font-weight: $font-weight-medium;
+        color:$primary ;
+    }
+    .box-gray{
+        width: 24px;
+        height: 24px;
+        background: $box-gray;
+        border-radius: 4px;
+        @include iphone(){
+            width: 16px;
+            height: 16px; 
+        }
+    }
+    .box-brown{
+        width: 24px;
+        height: 24px;
+        background: $box-brown;
+        border-radius: 4px;
+        @include iphone(){
+            width: 16px;
+            height: 16px; 
+        }
+    }
+}
+//鏡框卡片結束
+
+// 分頁開始
+.product-pagination{
+    li{
+        font-size: 18px;
+        font-weight: $font-weight-regular;
+        @include iphone(){
+           font-size: 12px; 
+        }
+    }
+    li a:hover{
+        background: #000;
+        color:white;
+    }
+    
+    li:nth-child(1),li:nth-child(7){
+        font-size: 19px;
+        @include iphone(){
+           font-size: 12px; 
+        }
+    }
+    .next:hover,.last:hover{
+        background:$F2F2F2 ;
+        color:$black;
+    }
+    
+    a{
+        text-decoration: none;
+        color: $pagination;
+        display: block;
+        height: 48px;
+        height: 100%;
+        border: 1px solid $pagination;
+        padding: 10px 15px 12px 15px;
+         @include iphone(){
+           padding: 8px 10px 8px 10px;
+        }
+    }
+    .digital.active a{
+        background: #000;
+        color: white;
+    }
+}
+// 分頁結束
+//product-innerSun.html開始
+.product-card{
+    .product-inner-photo{
+     width: 31.33333%;
+     @include ipad(){
+         width: 48%;
+     }
+     @include iphone(){
+         width: 100%;
+     }
+    }
+    .product-inner-photo:nth-child(4),
+    .product-inner-photo:nth-child(5),
+    .product-inner-photo:nth-child(6){
+        margin-bottom: 0;
+    }
+
+}
+.product-inner-card{ //卡片與分頁的間距
+    margin-bottom: 88px;
+     @include ipad(){
+        margin-bottom: 53px;
+     }                   
+    @include iphone(){
+         margin-bottom: 40px;
+     }
+}
+//product-innerSun.html結束

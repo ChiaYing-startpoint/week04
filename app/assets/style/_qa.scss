@@ -1,0 +1,158 @@
+
+// banner開始
+.qa-banner{
+    background: url('../img/72.png');
+    height: 304px;
+    background-position:  center;
+    background-size: cover ;
+    
+    @include ipad(){
+        background: url('../img/72-pad.png');
+        height: 304px;
+        background-position: center;
+        background-size: cover ;
+    }
+     @include iphone(){
+        background: url('../img/72-phone.png') no-repeat;
+        height: 180px;
+        background-position: center ;
+        background-size: cover ;
+    }
+    .qa-title{
+       
+        align-items: flex-end;
+    }
+    h2{
+        font-size: $font-64;
+        margin-right: 10px;
+        @include ipad(){
+            font-size: $font-48;
+            margin-bottom: 5px;
+            margin-right: 16px;
+        }
+        @include iphone(){
+            font-size: $font-28;
+            margin-bottom: 4px;
+            margin-right: 8px;
+        }
+    }
+    img{
+        @include ipad(){
+            width: 48px;
+            height: 48px;
+            margin-bottom: 9px;
+        }
+         @include iphone(){
+             width: 24px;
+            height: 24px;
+            margin-bottom: 8px;
+        }
+    }
+}
+// banner結束
+// 詢問配鏡開始
+.qa-box{  //天地留白
+    @include ipad(){
+        padding-top: 40px;
+        padding-bottom: 104px;
+    }
+    @include iphone(){
+         padding-top: 24px;
+        padding-bottom: 56px;  
+    }
+    
+}
+.qa-h3{
+    font-size: $font-32;
+    @include ipad(){
+        font-size: $font-28;
+        margin-bottom: 32px;
+    }
+    @include iphone(){
+         font-size: $font-20;
+         margin-bottom: 16px;
+    }
+}
+.qa-card{
+    div{
+        border: black 1px solid;
+        padding: 22px 0px 22px 38px; //內文的內距
+        @include ipad(){
+            padding: 16px 0px 16px 24px;
+        }
+         @include iphone(){
+            padding: 16px;
+        }
+    }
+    .active .card-item-header::before{ //點擊後，倒三角形
+        transform: rotate(-35deg);
+    }
+    .active .card-item-header::after{
+        transform: rotate(35deg);
+    }
+    .card-item-header{
+        position: relative;
+         &::before{     //三角形icon開始
+            content: '';
+            width: 15px;
+            height: 2px;
+            background:$black;
+            position: absolute;
+            top:34px;
+            right: 51px;
+            transform: rotate(35deg);
+            transition: transform .5s;
+            @include ipad(){
+                width: 11px;
+                top:25px;
+                right: 15px;
+            }
+            @include iphone320(){
+               width: 8px; 
+               right: 12px;
+            }
+        }
+            &::after{
+            content: '';
+            width: 15px;
+            height: 2px;
+            background:$black;
+            position: absolute;
+            top:34px;
+            right: 40px;
+            transform: rotate(-35deg);
+            transition: transform .5s; //三角形結束
+            @include ipad(){
+                width: 11px;
+                top:25px;
+                right: 24px;
+            }
+            @include iphone320(){
+               width: 8px; 
+               right: 6px;
+            }
+        }
+    }
+    a{
+        text-decoration: none;
+        color: $black;
+    }
+    h4{
+        font-size: $font-20;
+         @include ipad(){
+        font-size: $font-16;
+        }
+        
+    }
+    p{
+       @include ipad(){
+        font-size: $font-14;
+        }  
+    }
+    .card-item-body{
+        background: $F2F2F2;
+        display: none;
+    }
+
+}
+// 詢問配鏡結束

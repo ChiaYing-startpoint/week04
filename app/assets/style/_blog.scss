@@ -1,0 +1,604 @@
+
+
+// blog.html開始
+// 導覽列開始 和下拉式選單
+.blog{
+    @include ipad(){ //地留白
+        padding-bottom: 104px;
+        
+    }
+    @include iphone(){
+        padding-bottom: 56px;
+    }
+}
+.blog-nav.active{
+    @include iphone(){
+        transform: translateY(50px); //點擊後打開下拉式選單
+    }
+}
+.blog-nav{
+    li:hover{
+        @include iphone(){
+            background: $DCDCDC;
+        }
+    a:hover{
+        @include iphone(){
+            color:$pagination;
+        }
+    }
+    }
+    @include iphone(){ //讓下拉式選單隱藏
+        position: absolute;
+        left: 0px;
+        top:0px;
+        transform: translateY(-168px);
+        transition: all .8s;
+        width: 100%;
+        overflow: hidden;
+        z-index: 150;
+    }
+    .container-nav{
+        @include ipad(){
+        max-width: 100%; 
+        padding: 0% 4%; //在全域設置92.5%，就無法滿版
+    }
+        @include iphone(){
+            padding: 0px;
+        }
+    }
+    background:$second;  
+    @include iphone(){  //下拉式選單，往上推
+        
+    }
+    ul{
+      @include iphone(){
+        flex-direction: column;
+    }  
+    }
+    .jq-blogarrow{    //下拉式選單箭頭開始
+        @include iphone(){
+            position: relative;
+        }
+    }
+    .jq-blogarrow::before{
+        @include iphone(){
+            content: '';
+            display: block;
+            width: 2px;
+            height: 13px;
+            background: #000;
+            position: absolute;
+            top:9px;
+            right: 50.5%;
+            transform: rotate(-45deg);
+            transition: all 1s;
+            @include iphone414(){
+                right: 50.8%;
+            }
+            @include iphone375(){
+                right: 51%;
+            }
+        }
+    }
+    .jq-blogarrow::after{
+        @include iphone(){
+            content: '';
+            display: block;
+            width: 2px;
+            height: 13px;
+            background: #000;
+            position: absolute;
+            top:9px;
+            left:50.5%;
+            transform: rotate(45deg);
+            transition: all 1s;
+            @include iphone414(){
+                left: 50.8%;
+            }
+            @include iphone375(){
+               left: 51%;
+            }
+        }
+    }
+     .jq-blogarrow.active::before{
+        @include iphone(){
+            content: '';
+            display: block;
+            width: 2px;
+            height: 13px;
+            background: #000;
+            position: absolute;
+            top:9px;
+            right: 50.5%;
+            transform: rotate(-135deg);
+            @include iphone414(){
+                right: 50.8%;
+            }
+             @include iphone375(){
+                right: 51%;
+            }
+        }
+    }
+    .jq-blogarrow.active::after{  //下拉式選單箭頭結束
+        @include iphone(){
+            content: '';
+            display: block;
+            width: 2px;
+            height: 13px;
+            background: #000;
+            position: absolute;
+            top:9px;
+            left:50.5%; //用%數不容易跑版
+            transform: rotate(135deg);
+            @include iphone414(){
+                left: 50.8%;
+            }
+             @include iphone375(){
+               left: 51%;
+            }
+            
+        }
+    }
+    
+    
+    a{ 
+        font-size: $font-20;
+        font-weight: $font-weight-bold;
+        color: $white;
+        display: block;
+        text-decoration: none;
+        padding: 13px 0px;
+        @include ipad(){
+            font-size:$font-16 ;
+            padding: 16px 0px;
+        }
+         @include iphone(){
+            padding:14px 0px;
+            text-align: center;
+            color: $black;
+        } 
+        svg{
+             @include iphone(){
+             display: none;
+            } 
+           
+        } 
+    }
+    li{
+       @include ipad(){
+            margin-right: 32px;
+        } 
+        @include iphone(){
+            background: $white;
+            width: 100%;
+            margin-right: 0px;
+            border: 1px solid $border;
+        } 
+    }
+   li:nth-child(5){ //點擊處樣式
+       margin-left: auto;
+       @include ipad(){
+            margin-right: 0px;
+        }
+         @include iphone(){
+            background: $white;
+            border: 1px solid black;
+        } 
+   }
+}
+// 導覽列結束
+// 企劃開始
+.blog-article{
+    margin-top: 88px; //天留白
+     @include ipad(){    //與導覽列的間距
+            margin-top: 40px;
+        }
+     @include iphone(){
+            margin-top: 110px;
+        } 
+        li{
+            @include ipad(){
+                margin-bottom: 32px;
+            }
+            @include iphone(){
+                flex-direction: column;
+                margin-bottom: 24px;
+            }
+        }
+        li:nth-last-child(1){ //倒數最後一個
+            margin-bottom: 0;
+        }
+    img{
+        width: 50%; //★圖片可自適應
+        @include ipad(){
+           width: 50%; 
+        }
+        @include iphone(){
+                width: 100%;
+                margin-bottom: 8px;
+            }
+    }
+    .blog-title{
+        margin-bottom: 16px; 
+        @include iphone(){
+            margin-bottom: 0px;
+        }
+    }
+    h2{
+        font-size: $font-32;
+        color: $second;
+        @include ipad(){
+            font-size: $font-20;  
+        }
+        @include iphone(){
+                font-size: $font-16;
+                margin-left: 0px;
+            }
+    }
+    .blog-h3{
+        @include iphone(){
+                margin-left: 0px;
+                align-items: baseline;
+            }
+    }
+    h3{
+        font-size: $font-20;
+        font-family: $font-family;
+        font-weight: $font-weight-medium;
+        @include ipad(){
+            font-size: $font-16;  
+        }
+        @include iphone(){
+                font-size: $font-14;
+            }
+    }
+    time{
+        font-family: $font-family;
+        font-weight: $font-weight-medium;
+        @include ipad(){
+            font-size: $font-14;  
+        }
+    }
+    p{
+       font-size: $font-20; 
+       text-align: justify;
+       color: $pagination;
+       @include ipad(){
+            font-size: $font-14;  
+        }
+        @include iphone(){
+            margin-left: 0px;
+            display: none;
+        }
+    }
+    .blog-text{
+        position: relative;
+        a{                 //more文字
+        position: absolute;
+        right: 30px;
+        bottom: 0px;
+        font-size: $font-36;
+        font-family: $font-family;
+        font-weight: $font-weight-black;
+        color: $black;
+        text-decoration: none;
+        @include ipad(){
+            font-size: $font-14;
+            bottom: 8px; 
+            right: 0px;
+        }
+        @include iphone(){
+            display: block;
+            bottom: 20px; 
+            right: 0px;
+        }
+    }
+        a::after{   //more箭頭
+            content: url('../img/blog-arrow.svg');
+            position: absolute;
+            display: inline-block;
+            transition: all .45s;
+            transform: translateX(8px);
+            @include ipad(){
+            display: none;  
+        }
+        
+        }
+        a:hover::after{
+             transform: translateX(18px);
+        }
+    }
+}
+// 企劃結束
+// 分頁開始 有12345頁數
+.blog-inner-bread{
+    @include ipad(){
+        a{
+            font-size: $font-14;
+        }
+    }
+}
+.blog-pagination{  //與card的間距
+    @include ipad(){
+        padding-top: 52px;
+        
+    }
+    @include iphone(){
+        padding-top: 40px;
+        
+    }
+    }
+        
+// 分頁結束   
+// blog.html結束
+
+
+
+
+
+
+// blog-inner.html開始
+
+.blog-inner{
+    @include ipad(){
+        padding-bottom: 104px; //地留白
+        
+    }
+    @include iphone(){
+        padding-bottom: 190px; //地留白 (與右欄和分頁排版有關，留下空間)
+        
+    }
+    // 麵包屑開始
+   .blog-inner-bread{
+       @include ipad(){
+           margin-bottom: 8px;
+       }
+       @include iphone{
+           margin-top: 80px;
+       }
+       li{
+         position: relative;  
+       }
+       li::before{
+           content: '';
+           display: inline-block;
+           width: 1px;
+           height: 15px;
+           background:$black;
+           top: 4px;
+           right:  10px;
+           position: absolute;
+           transform: rotate(30deg);
+       }
+       li:nth-child(4)::before{
+           display: none;
+       }
+       a{
+           text-decoration: none;
+           color: $black;
+           margin-right: 20px;
+       }
+       .qq a {
+            color:$primary ;
+}
+   } 
+    //麵包屑結束
+    // 左欄開始
+    .blog-inner-chapter{   //與分頁的間距
+        margin-bottom: 48px;
+         @include ipad(){
+              margin-bottom: 32px;
+            }
+        .container{
+            @include iphone(){
+                flex-direction: column;
+            }
+        }
+           
+    }
+    article{ //面積寬度
+        width: 75%;
+        @include ipad(){
+            width: 89%;
+        }
+        @include iphone(){
+            width: 100%;
+            margin-right: 0px;
+        }
+    }
+    .article-tag{ //提示標籤開始
+        a{
+            text-decoration: none;
+            color: $primary;
+            font-size: $font-24;
+            font-family: $font-family;
+            font-weight: $font-weight-bold;
+            @include ipad(){
+               font-size: $font-16; 
+            }
+        }
+    }
+    .article-title{  //標題開始
+        @include ipad(){
+               margin-bottom: 16px;
+            }
+       
+        h2{
+            font-size: $font-48;
+            @include ipad(){
+               font-size: $font-32; 
+            }
+        }
+        .article-h3{
+           font-family: $font-family; 
+           font-weight: $font-weight-medium;
+        }
+        h3{
+            font-size: $font-28;
+            @include ipad(){
+               font-size: $font-16; 
+            }
+        }
+        time{
+            color: $timecolor;
+            @include ipad(){
+               font-size: $font-14; 
+            }
+        }
+    }
+    .blog-inner-photo{ //照片開始
+        li{
+            @include iphone(){
+                margin-bottom: 24px;
+            }
+        }
+        img{
+             @include ipad(){
+               margin-bottom: 16px;
+            }
+        }
+        p{
+            font-size: $font-20;
+            color: $article;
+            font-weight: $font-weight-bold;
+            opacity: .6;
+            @include ipad(){
+               font-size: $font-16; 
+            }
+            @include iphone(){
+                text-align: justify;
+            }
+        }
+    }
+    // 左欄結束
+    // 右欄開始
+    aside{
+        width: 25%;
+        margin-top: 32px;
+        font-family: $font-family; 
+        font-weight: $font-weight-bold;
+        color: $primary;
+        
+        
+        @include ipad{   //右欄面積
+           width: 30%; 
+        }
+         @include iphone(){
+                width: 100%;
+                position: relative;
+                top: 140px;
+                
+            }
+        img{
+            @include ipad(){
+               width: 24px;
+            }
+            
+        }
+        p{
+            font-size: $font-28;
+            @include ipad(){
+               font-size: $font-20; 
+            }
+        }
+        ul{
+            display: flex;
+            flex-wrap: wrap;
+            @include iphone(){
+            }
+        }
+        li{
+            margin-right: 24px;
+            margin-bottom: 8px;
+            @include ipad(){
+               margin-right: 16px; 
+            }
+            @include iphone(){
+               margin-bottom: 0px; 
+            }
+        }
+        li:nth-child(4){
+             @include ipad(){
+               margin-right: 0px; 
+            }
+
+        }
+        li:nth-child(7){
+            width: 100%; //寬度佔滿，可換行，不要一次下太多，會影響換行
+             @include iphone(){
+              width: 50%;   
+                
+            }
+        }
+        li:nth-child(5){
+            @include iphone(){
+                 width: 100%;
+            }
+             @include iphone(){
+                width: 10%;
+            }
+        }
+        a{
+           color: $primary;
+           text-decoration: none; 
+           font-size: $font-24;
+           @include ipad(){
+               font-size: $font-16; 
+            }
+        }
+    }
+    // 右欄結束
+}
+// 分頁開始
+.blog-inner-footer{
+    font-size: $font-20;
+     @include ipad(){
+            font-size: $font-16;
+        }
+    @include iphone(){
+        margin-top: -130px;
+    }
+    .blog-share{
+        a{
+            text-decoration: none;
+        }
+        @include ipad(){
+            margin-bottom: 34px;
+        }
+    }
+    .blog-inner-page{
+         @include iphone(){
+         flex-direction: column;
+    }
+        position: relative;
+        &::before{
+            content: '';
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            background:$glay;
+            top:-24px;
+            @include ipad(){
+            top:-16px;
+        }
+        }
+        a{
+            text-decoration: none;
+            color: $black;
+        }
+        a:nth-child(2){
+            @include iphone(){
+                flex-direction: row-reverse;
+                justify-content: flex-end;
+            }
+        }
+        p:nth-child(1){ 
+            @include iphone(){
+                margin-left: 8px;
+            }
+        }
+    }
+}
+
+//blog-inner.html結束

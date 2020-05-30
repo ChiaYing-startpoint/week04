@@ -1,0 +1,755 @@
+
+.container{
+    @include ipad(){
+        max-width: 92%; //★使用max-width，不用padding左右內推
+        padding: 0px 0px;
+    }
+    
+}
+// banner開始
+.banner{
+    background: url('../img/68.png') no-repeat;
+    height: 840px;
+    background-position: center ;
+    background-size: cover;
+    @include ipad(){
+        background: url('../img/68-ipad.png')no-repeat;
+        background-position: center ;
+        background-size: cover;
+    }
+    @include iphone(){
+        background: url('../img/68-iphone.png');
+        background-position: center ;
+        background-size: cover;
+        height: 375px;
+    }
+}
+.banner-title{
+    color: $second;
+    P{
+        font-size: $font-36;
+        font-weight: 600;
+        @include ipad(){
+            font-size: $font-20;
+        }
+        @include iphone(){
+            font-size: $font-16;
+        }
+    }
+    h2{
+        font-size: $font-64;
+        @include ipad(){
+            font-size: $font-48;
+        }
+        @include iphone(){
+            font-size: $font-32;
+        }
+    }
+}
+// banner結束
+
+// 專業開始
+
+.profession{
+    .container{
+        @include iphone(){
+            padding: 0px;
+        }
+    }
+    color: $second;
+    background: $bgColor;
+    @include ipad(){
+        padding-top: 40px;
+        padding-bottom: 68px;
+    }
+    @include iphone(){
+        padding-top: 32px;
+        padding-bottom: 56px;
+    }
+    h3{
+        @include h3;
+        @include ipad(){
+            margin-bottom: 12px;
+            font-size: $font-32;
+        }
+        @include iphone(){
+            font-size: $font-24;
+        }
+    }
+    ul{
+        align-items: baseline; //★li的物件都在基準線對齊
+        @include ipad(){
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding:0px 36px;
+        }
+    }
+    li{
+        @include flex-li;
+        width: 25%;
+        padding-right: 37px; //內文左右留白
+        padding-left: 37px;
+        @include ipad(){
+            width:45%;
+            padding: 0px 30px;
+            padding-bottom: 12px;
+            margin-bottom: 24px;
+        }
+        @include iphone(){
+            width: 100%;
+        }
+    }
+    img{
+        @include ipad(){
+            margin-top: 20px;
+            margin-bottom: 16px;
+           
+        }
+        @include iphone(){
+            max-width: 50%;
+        }
+    }
+    h5{
+        font-size: $font-24;
+        margin-bottom: 4px;
+        @include ipad(){
+            margin-bottom: 8px;
+            font-size: $font-20;
+        }
+    }
+    p{
+        text-align: justify; 
+        color: $black;
+        height: 100%;
+    }
+}
+// 專業結束
+
+// 經典系列開始
+.classic{
+    @include ipad(){
+        padding: 40px 0px;
+    }
+    .container{
+        @include iphone(){
+            padding: 0px;
+        }
+    }
+    h3{
+        color: $second;
+        @include h3;
+        @include ipad(){
+            margin-bottom: 32px;
+            font-size: $font-32;
+        }
+        @include iphone(){
+            font-size: $font-24;
+        }
+    }
+    ul{
+        color:$primary;
+        @include iphone(){
+            color: $white;
+        }
+    }
+    li{
+       @include ipad(){
+            justify-content: space-between;
+            margin-bottom: 8px;
+       } 
+       @include iphone(){
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    li:nth-child(2){
+        @include ipad(){
+            flex-direction: row;
+        }
+    }
+    img{
+        width:66%; //★img是內層物件不用max-width
+        @include ipad(){
+            width: 66%;
+        }
+        @include iphone(){
+            width: 100%;
+        }
+    }
+    p{
+        font-family: $font-family;
+        font-weight: $font-weight-black;
+        font-size: $font-48;
+        font-style: italic;
+        @include ipad(){
+            font-size: $font-28;
+            margin: 0;
+        }
+        @include iphone(){
+            position: absolute;
+            
+        }
+    }
+    .opticial::before{
+        content: url('../img/iconfinder_44_2529968.svg');
+        position: relative;
+        display: inline-block;
+        top:0px;
+        right: 8px;
+        @include ipad(){
+            content: url('../img/iconfinder_44_33.svg');
+        }
+        @include iphone(){
+            filter: brightness(500);
+        }
+        
+    }
+    .sun::before{
+        content: url('../img/Layer_1.svg');
+        position: relative;
+        top:7px;
+        left: -8px;
+        @include ipad(){
+            content: url('../img/Layer_1-33.svg');
+        }
+        @include iphone(){
+            filter: brightness(500);
+        }
+    }
+    .fun::before{
+        content: url('../img/Page-1.svg');
+        position: relative;
+        top:7px;
+        left: -8px;
+        @include ipad(){
+            content: url('../img/Page--1-33.svg');
+        }
+        @include iphone(){
+            filter: brightness(500);
+        }
+    }
+    //hover彩色圖片
+    .color img:hover{
+        transition: all .3s .2s;
+        opacity: 0;
+    }
+    .color {
+        background: url('../img/15@2x.png')no-repeat;
+        background-size: contain;
+        background-position: right;
+        @include ipad(){
+            background-position: left;
+        }
+    }
+}
+// 經典系列結束
+
+// 聯名設計開始
+   // 上半部start
+.brand{
+    
+    background: url('../img/nick-owuor-astro-nic-visuals-54Q_HvMWtVE-unsplash.png');
+    background-size: cover;
+    background-position: center center;
+    padding-bottom: 479px; //底部背景高度
+    @include ipad(){
+        padding-top: 40px;
+        padding-bottom: 417px;
+    }
+    @include iphone(){
+        padding-top: 24px;
+        padding-bottom: 189px;
+    }
+    .container-full{  //外容器間距
+        max-width: 1539px;
+        margin: 0 auto;
+        padding-left: 0px;
+        padding-right: 0px;
+
+        @include ipad(){
+        max-width: 92.5%;
+        padding: 0px 0px;
+        }
+        @include iphone(){
+            padding: 0px 24px;
+        }
+        @include iphone320(){
+            padding: 0px 12px;
+        }
+    }
+    h3{
+        color: $white;
+        @include h3;
+        @include ipad(){
+            margin-bottom: 30px;
+            font-size: $font-32;
+        }
+        @include iphone(){
+            font-size: $font-24;
+        }
+    }
+    ul{
+        font-size: $font-72;
+        font-family: $font-family;
+        font-weight: $font-weight-bold;
+        color: $primary;
+    }
+    .glasses-bottom{
+        @include ipad(){
+            margin-bottom: 40px;
+        }
+        @include iphone(){
+            margin-bottom: 20px;
+        }
+        .a{ //左側黑人眼鏡
+            flex-grow: 6;
+            @include ipad(){ //面積
+                flex-grow:60;
+                margin-right: 3px;
+            }
+            @include iphone(){
+                flex-grow: 1.5;
+                margin-right: 2px;
+            }
+            @include iphone414(){
+                flex-grow: 6;
+            }
+            @include iphone320(){
+                flex-grow: 5;
+            }
+            a{
+            background: url('../img/a.png');
+            @include a;
+            height: 840px;
+            @include ipad{
+                height: 500px;
+            }
+           
+            @include iphone414(){
+                height: 270px;
+            }
+            @include iphone320(){
+                height: 220px;
+            }
+            }
+        }
+        .bcde{ //右側3人組
+            flex-grow: 7;
+            @include ipad(){
+                flex-grow:40;
+            }
+            @include iphone(){
+                flex-grow: 0.7;
+            }
+            @include iphone414(){
+                flex-grow: 0;
+            }
+           
+        }
+        .b{ //彩色捲髮女
+           flex-grow: 2;
+            @include ipad(){
+                flex-grow:70;
+                margin-bottom: 3px;
+            }
+            @include iphone(){
+                flex-grow: 0.6;
+                margin-bottom: 2px;
+                height: 20%;
+            }
+            a{
+                background: url('../img/b.png');
+                @include a;
+            }
+        }
+        .cde{ //黑白2人組
+            flex-grow: 1;
+            @include ipad(){
+                flex-grow: 30;
+            }
+            @include iphone(){
+                flex-grow: 1;
+            }
+        }
+        .c{ //黑白眼鏡哥
+          flex-grow: 24;
+          @include ipad(){
+              flex-grow: 1;
+              margin-right: 3px;
+          } 
+          @include iphone(){
+              flex-grow: 1;
+              margin-right: 2px;
+              position: relative;
+              width: 100px;
+              left: 0px;
+              top:98px;
+              z-index: 6;
+              height: 63%;
+          }
+          @include iphone414(){
+              top:50px;
+              height: 67%;
+          }
+          @include iphone320(){
+              top:38px;
+              height: 70%;
+          }
+          a{
+              background: url('../img/c.png');
+              @include a;
+          }
+        }
+        .de{ //黑白眼鏡女+more
+          flex-grow: 76;
+          @include ipad(){
+              flex-grow:3;
+          }
+          @include iphone(){
+              flex-grow:1;
+              width: 100%;
+          }
+           
+        }
+        .d{ //黑白眼鏡女
+          flex-grow: 2;
+          @include ipad(){
+              flex-grow: 1;
+          }
+          @include iphone(){
+              flex-grow: 0.8;
+              height: 1%;
+              position: relative;
+              margin-left: -82px;
+          }
+          @include iphone414(){
+              margin-left: -71px;
+          }
+          a{
+              background: url('../img/d.png');
+              @include a;
+          }    
+        }
+        // more開始
+        .e{
+            flex-grow: 0.5;
+            background: url('../img/e.png')no-repeat; //黃色背景
+            background-size: 36% 100%;
+            background-position:83% 50%;
+            @include ipad(){
+                flex-grow: 0.2;
+                background-position: 75% 0;
+                 background-size: 40% 100%;
+                 font-size: $font-40;
+            }
+            @include iphone(){
+                flex-grow: 1;
+                font-size: 26px;
+                background-position: 0% center;
+                background-size:80% 60%;     
+            }
+            
+            .more::before{ //文字
+                content: 'MORE';
+                position: absolute;
+                transition: all .65s .3s;
+            }
+            .more:hover::before{
+                transform: translateY(-70px);
+                opacity: .7;
+                @include ipad(){
+                    transform: translateY(-38px);
+                }
+            }
+            .more::after{
+                content: 'MORE';
+                position: absolute;
+                transition: all .65s .3s;
+                
+            }
+            .more:hover::after{
+                transform: translateY(-150px);
+                opacity: .3;
+                @include ipad(){
+                    transform: translateY(-80px);
+                }
+            }
+            .more:hover .arrow:last-child{
+                transform: translateX(10px);
+                transition: all .65s .3s;
+            }
+            .more{  
+                transform: translateX(0px); //白色背景
+                display:flex;
+                align-items: center;
+                padding-left: 4%;
+                width: 44%;
+                height: 75%;  
+                background: $white; 
+                @include ipad(){
+                    width: 51%;
+                }
+                @include iphone(){
+                    width: 92%;
+                    height: 40%;
+                }
+                .arrow::before{ //箭頭
+                    content: url('../img/ic_arrow.svg');
+                    margin-left: 10px;
+                    @include ipad(){
+                        content: url('../img/ic_arrow_forward_24px.svg');
+                    }
+                    @include iphone(){
+                        content: url('../img/ic_arrow_forward_18px.svg');
+                    }
+                }         
+            }
+        }
+        // more結束
+    }
+}
+    // 下半部start
+.brand{
+    .container{
+        @include iphone(){
+            padding: 0px;
+        }
+    }
+    .dy{
+        @include iphone(){
+            flex-direction: column;
+        }
+    }
+    .blue,.pink{
+        position: relative;
+        width: 48%;
+        @include iphone(){
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        
+        span{
+            position: absolute;
+            top:50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            white-space: nowrap; //讓A+不換行
+            @include ipad(){
+                font-size: $font-32;
+            }
+        }
+        &::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            background: rgba(255,255,255,0.5);
+        }
+        &:hover::before{
+            transition: all .2s .1s;
+           background: rgba(255,255,255,0.1); 
+        }
+    }
+}
+// 聯名設計結束
+
+// 顧客推薦開始
+.recommend{
+    .container{
+        @include iphone(){
+            padding: 0px;
+        }
+    }
+    margin-top: -330px;
+    @include ipad(){
+        padding-bottom: 40px;
+        margin-top: -380px;
+    }
+    @include iphone(){
+        padding-bottom: 8px; //加上li的16px
+        margin-top: -180px;
+    }
+    h3{
+        color: $white;
+        @include h3;
+         @include ipad(){
+            margin-bottom: 32px;
+            font-size: $font-32;
+        }
+        @include iphone(){
+            font-size: $font-24;
+            margin-bottom: 16px;
+        }
+    }
+    ul{
+        font-family: $font-family;
+        @include ipad(){
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        @include iphone(){
+            flex-direction: column;
+        }
+    }
+    li:nth-child(1),li:nth-child(2){
+        @include ipad(){
+            margin-bottom: 24px;
+        }
+        @include iphone(){
+            margin-bottom: 16px;
+        }
+    }
+    
+    li{
+        width: 25%;
+        background-color: $white;
+        box-shadow:inset 0px 0px 1px 1px   $glaylight;
+        
+        @include ipad(){
+            width: 48%;
+            margin:0px;
+            
+        }
+        @include iphone(){
+            width: 100%;
+            margin-bottom: 16px;
+        }
+       h6,p{
+           padding-left: 16px;
+           padding-right: 16px;
+       }
+       h6{
+          font-weight:  $font-weight-medium;
+       }
+       p{
+          font-weight: $font-weight-regular;     
+       } 
+       .glay{
+           color: $glay;
+       }
+       img{
+           @include iphone(){
+               width: 100%;
+           }
+       }
+       
+    }
+}
+// 顧客推薦結束
+
+// 聯絡我們開始
+.contact{
+    background: $bgColor;
+    @include ipad(){
+        padding-top: 40px;
+        padding-bottom: 56px;
+    }
+    .container{ 
+         width:80%; //區塊寬度用%數
+         padding: 0% 10%;
+        @include ipad(){
+        width: 75%;
+        padding: 0% 0%;
+    }
+        @include iphone(){
+        width: 100%;
+        
+    }
+    }
+    h3{
+        color: $black;
+        font-size: $font-48;
+        text-align: center;
+       
+         @include ipad(){
+            margin-bottom: 16px;
+            font-size: $font-32;
+        }
+        @include iphone(){
+            font-size: $font-24;
+            margin-bottom: 8px;
+        }
+    }
+    p{
+        font-size: $font-20;
+        font-weight: bold;
+        @include ipad(){
+            margin-bottom: 16px;
+        }
+    }
+    label{
+        font-weight: bold;
+    }
+    input[type="text"],input[type="tel"],input[type="email"],textarea{
+        width: 100%;
+        height: 50px;
+        padding-left: 16px;
+        background-color: transparent;
+        border: 1px solid $black;
+        @include ipad(){
+            margin-bottom: 12px;
+        }
+    }
+    textarea{
+        height: 122px;
+        resize: none;
+        padding-top: 14px;
+        @include ipad(){
+            margin-bottom: 0;
+        }
+    }
+    ::placeholder,textarea{
+        font-family: $font-family;
+        font-weight: $font-weight-regular;
+        font-size: $font-16;
+    }
+    input[type="text"]::placeholder{
+          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+    input[type=submit]{
+        width: 180px;
+        height: 54px;
+        border: none;
+        background: $primary;
+        color: $white;
+        font-weight: $font-weight-bold;
+        font-size: $font-16;
+        transition: all .3s;
+        transform-origin:0;  //以 transform-origin 左側中間為放大的基準點，垂直方向 center 。
+        transform:scaleX(1);
+    }
+    input[type=submit]:hover{
+       background: $second;
+       transform-origin:0;
+        transform:scaleX(1.2);
+    }
+    // 製作checkbox樣式開始
+    .checkbox{
+        input[type="checkbox"]{
+        display: none;
+        }
+        label::before{ //方框
+            content: '';
+            display:inline-block ;
+            width: 20px;
+            height: 20px;
+            border:$black 2px solid;
+            position: relative;
+            top:4px;
+            margin-right: 4px;
+        }
+        //在label前面，當checkbox被點擊時，背景紅色
+        input[type="checkbox"]:checked + label:before { 
+            background-color: $primary;
+            border-color: $primary;
+            color: $white;
+        }
+        input[type="checkbox"]:checked + label:before {
+            content: url('../img/tick-14.png'); //打勾
+        }
+    }
+    // 製作checkbox樣式結束
+}
+// 聯絡我們結束
